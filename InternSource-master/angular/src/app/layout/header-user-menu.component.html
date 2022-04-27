@@ -1,0 +1,30 @@
+<li class="nav-item dropdown nav-user-menu " dropdown>
+
+    <div class="row " style="float: right; ">
+        <div class="ui-inputgroup ">
+            <input type="text" pInputText placeholder="search">
+            <span class="ui-inputgroup-addon"><i class="pi pi-search"></i></span>
+        </div>
+        <div class="ui-inputgroup bell">
+            <i class="pi pi-bell" style="font-size: 1.5em"></i>
+        </div>
+        <div class="ui-inputgroup bell">
+            <i class="pi pi-envelope" style="font-size: 1.5em"></i>
+        </div>
+        <div class="ui-inputgroup bell">
+            <i class="pi pi-cog" style="font-size: 1.5em"></i>
+        </div>
+
+        <a href="javascript:; " class="nav-link m-l-5 " dropdownToggle>
+            <img class="user-image img-circle elevation-2 " src="assets/img/user.png " alt="User Image " />
+        </a>
+        <div class="dropdown-menu dropdown-menu-right " *dropdownMenu>
+            <a class="dropdown-item " [routerLink]="[ 'update-password'] ">
+                <i class="fas fa-user-edit "></i> đổi mật khẩu
+            </a>
+            <a class="dropdown-item " href="javascript:; " (click)="logout() ">
+                <i class="fas fa-sign-out-alt "></i> Đăng xuất
+            </a>
+        </div>
+    </div>
+</li>

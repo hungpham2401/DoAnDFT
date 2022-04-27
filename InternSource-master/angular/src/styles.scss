@@ -1,0 +1,180 @@
+@import "./scss/mixins";
+@import "./scss/variables";
+@import "./scss/primeng";
+@import "./scss/generate";
+// Modal Start
+.modal-body {
+    padding: 25px;
+}
+
+.fixed-modal-height {
+    max-height: calc(100vh - 215px);
+    overflow-y: auto;
+}
+
+.fixed-modal-height-full {
+    height: calc(100vh - 215px);
+    overflow-y: auto;
+}
+
+// Modal End
+.text-ok {
+    font-weight: normal;
+}
+
+.width-btn-footer {
+    min-width: 70px !important;
+}
+
+.btn-save-background {
+    background-color: #5867dd !important;
+    border-color: #5867dd !important;
+}
+
+.btn-cancle-background {
+    background: white !important;
+    border-color: #ebedf2 !important;
+    color: $text-color !important;
+}
+
+.body {
+    font-family: Quicksand, sans-serif !important;
+}
+
+body .ui-widget {
+    font-family: Quicksand, sans-serif !important;
+    font-size: 16px !important;
+    text-decoration: none;
+}
+
+.visibility-hidden {
+    visibility: hidden !important;
+}
+
+body a {
+    cursor: pointer !important;
+}
+
+// Hiển thị cuộn ngang table
+.hien-thi-cuon-ngang {
+    overflow-x: auto !important;
+}
+
+.text-more {
+    position: relative;
+}
+
+// .dropdown-menu.show {
+//   width: 100%;
+// }
+.ngx-dropzone-label {
+    word-wrap: break-word !important;
+}
+
+.width100 {
+    width: 100% !important;
+}
+
+.nav-sidebar .nav-link p,
+.nav-sidebar .nav-link i {
+    color: #000;
+}
+
+.login-page {
+    background-image: url('./img/anh-dep-viet-nam.jpg') !important;
+    background-position: center;
+}
+
+.bell {
+    margin-left: 15px;
+    text-align: center;
+    align-items: center;
+}
+
+.bell:hover {
+    cursor: pointer;
+}
+
+.text-black {
+    color: #000;
+}
+
+.p-col {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-outline {
+    color: #adb5bd;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.color-1 {
+    background-color: #0dcaf0;
+    height: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.color-2 {
+    background-color: #FD7E14;
+    height: 10px;
+}
+
+.color-3 {
+    background-color: red;
+    height: 10px;
+}
+
+.color-4 {
+    background-color: #0d6efd;
+    height: 10px;
+}
+
+.color-5 {
+    background-color: blue;
+    height: 10px;
+}
+
+.color-6 {
+    background-color: #3f3d56;
+    height: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.box-line {
+    padding: 10px 15px;
+    overflow: hidden !important;
+}
+
+.box-goals {
+    padding: 10px 10px;
+    border: 1px solid #0d6efd;
+    border-radius: 10px;
+}
+
+.box-sm {
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    margin-top: 10px;
+}
+
+.pd10 {
+    padding: 10px 10px;
+}
+
+.text-l {
+    text-align: left;
+}
