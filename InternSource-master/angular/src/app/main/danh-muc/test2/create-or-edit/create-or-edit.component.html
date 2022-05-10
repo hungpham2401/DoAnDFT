@@ -1,0 +1,36 @@
+<form [formGroup]="form" class="form-horizontal" autocomplete="off" #createUserModal="ngForm" (ngSubmit)="save()">
+    <abp-modal-header [title]="'Thêm mới Người dùng'" (onCloseClick)="bsModalRef.hide()"></abp-modal-header>
+    <div class="modal-body fixed-modal-height">
+        <p-tabView>
+            <p-tabPanel header="Thông tin chung">
+                <div class="row ui-fluid">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <dft-label-validation [control]="form.get('HoTen')" [title]="'Họ tên *'">
+                            </dft-label-validation>
+                            <input formControlName="HoTen" type="text" class="form-control" name="HoTen" id="HoTen" maxlength="64" />
+                            <dft-validation [control]="form.get('HoTen')"></dft-validation>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <dft-label-validation [control]="form.get('Name')" [title]="'Name *'">
+                            </dft-label-validation>
+                            <input formControlName="Name" type="text" class="form-control" name="Name" id="Name" minlength="2" maxlength="32" />
+                            <dft-validation [control]="form.get('Name')"></dft-validation>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <dft-label-validation [control]="form.get('EmailAdress')" [title]="'Địa chỉ Email *'">
+                            </dft-label-validation>
+                            <input formControlName="EmailAdress" class="form-control" maxlength="256" name="abc" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,})+$" />
+                            <dft-validation [control]="form.get('EmailAdress')"></dft-validation>
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+    <abp-modal-footer [cancelDisabled]="saving" (onCancelClick)="bsModalRef.hide()"></abp-modal-footer>
+</form>

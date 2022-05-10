@@ -82,6 +82,11 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
         label: "Test" ,
         routerLink : '/app/main/test' ,
         icon: "fas fa-vial",
+      },
+      {
+        label: "Test2" ,
+        routerLink : '/app/main/test2' ,
+        icon: "fas fa-vial",
       }
 
     ];
@@ -126,6 +131,7 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
   getMenuItems(): MenuItem[] {
     return [
       new MenuItem("Demo", "/app/main/danh-muc/demo", "fa-thin fa-angle-left"),
+
       new MenuItem(
         "Quản lý Hệ thống","","fas fa-users",
         this.getPermission(
@@ -154,6 +160,11 @@ export class SidebarMenuComponent extends AppComponentBase implements OnInit {
       new MenuItem("Test","/app/main/danh-muc/tests", "" ,
         this.getPermission (
           "Pages.Test"
+        )
+      ),
+      new MenuItem("Test2","/app/main/danh-muc/demo/Test2/test2", "" ,
+        this.getPermission (
+          "Pages.Test2"
         )
       ),
     ];

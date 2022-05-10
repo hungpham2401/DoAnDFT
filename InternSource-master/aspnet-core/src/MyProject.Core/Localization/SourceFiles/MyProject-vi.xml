@@ -2,6 +2,7 @@
 <localizationDictionary culture="vi">
   <texts>
     <!-- Framework Start -->
+	  <text name="Test2" value="Test2"></text>
     <text name="Pages" value="Trang" />
     <text name="Are you sure?" value="Bạn chắc chắn không?" />
     <text name="HomePage" value="Home page" />

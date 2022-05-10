@@ -6,6 +6,10 @@ import { CreateOrEditDemoDialogComponent } from './demo/create-or-edtit/create-o
 import { TestComponent } from './test/test.component';
 import {FileUploadModule} from 'primeng/fileupload';
 import { CreateOrEditTestComponent } from './test/create-or-edit-test/create-or-edit-test/create-or-edit-test.component';
+import { Test2Component } from './test2/test2.component';
+import { CreateOrEditComponent } from './test2/create-or-edit/create-or-edit.component';
+
+
 
 
 
@@ -22,6 +26,9 @@ import { CreateOrEditTestComponent } from './test/create-or-edit-test/create-or-
         CreateOrEditDemoDialogComponent,
         TestComponent,
         CreateOrEditTestComponent,
+        Test2Component,
+        CreateOrEditComponent,
+
     ],
 })
 export class DanhMucModule { }

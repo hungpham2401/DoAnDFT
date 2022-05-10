@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppRouteGuard } from '@shared/auth/auth-route-guard';
 import { DemoComponent } from './danh-muc/demo/demo.component';
+
 import { TestComponent } from './danh-muc/test/test.component';
+import { Test2Component } from './danh-muc/test2/test2.component';
 
 @NgModule({
     imports: [
@@ -18,6 +20,10 @@ import { TestComponent } from './danh-muc/test/test.component';
             },
             {
                 path: 'test', component: TestComponent,
+                canActivate: [AppRouteGuard]
+            },
+            {
+                path: 'test2', component: Test2Component,
                 canActivate: [AppRouteGuard]
             },
 
