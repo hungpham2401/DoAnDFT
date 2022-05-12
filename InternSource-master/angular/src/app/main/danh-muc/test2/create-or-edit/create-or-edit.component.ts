@@ -12,6 +12,7 @@ import { CommonComponent } from "@shared/dft/components/common.component";
 import {
   CreateUserDto,
   DemoCreateInput,
+  PersonCreateInput,
   PersonServiceProxy,
   RoleDto,
 } from "@shared/service-proxies/service-proxies";
@@ -24,10 +25,10 @@ import { BsModalRef } from "ngx-bootstrap/modal";
 })
 export class CreateOrEditComponent extends AppComponentBase implements OnInit {
   saving = false;
-  user = new CreateUserDto();
-  roles: RoleDto[] = [];
-  checkedRolesMap: { [key: string]: boolean } = {};
-  defaultRoleCheckedStatus = false;
+  user = new PersonCreateInput();
+  //roles: RoleDto[] = [];
+  //checkedRolesMap: { [key: string]: boolean } = {};
+  //defaultRoleCheckedStatus = false;
 
   @Output() onSave = new EventEmitter<any>();
   form: FormGroup;
@@ -43,19 +44,14 @@ export class CreateOrEditComponent extends AppComponentBase implements OnInit {
 
   ngOnInit(): void {
     this.khoiTaoForm();
-    this.user.isActive = true;
-
   }
 
   khoiTaoForm() {
     this.form = this.fb.group({
-      HoTen: ['', Validators.required],
-      Name: ['', Validators.required],
-      EmailAdress: ['', Validators.required],
-      TenDangNhap: ['', Validators.required],
-
+      HoTen: ["", Validators.required],
+      Name: ["", Validators.required],
+      EmailAddress: ["", Validators.required],
     });
-
   }
 
   // setInitialRolesStatus(): void {
@@ -85,49 +81,35 @@ export class CreateOrEditComponent extends AppComponentBase implements OnInit {
   //   return roles;
   // }
 
-  save(): void {
+    save() : void {
     // this.user.roleNames = this.getCheckedRoles();
-    if (CommonComponent.getControlErr(this.form) === '') {
+    if (CommonComponent.getControlErr(this.form) === "") {
       this.saving = true;
       this._getValueForSave();
-      if (this.user.userName.toLocaleLowerCase() === 'admin') {
-        this.showSwalAlertMessage('Admin không được trùng!', 'error');
+      if (this.user.name.toLocaleLowerCase() === "admin") {
+        this.showSwalAlertMessage("Admin không được trùng!", "error");
         this.saving = false;
       } else {
-        this._personService.checkExist(this.user.userName, this.user.emailAddress, 0).subscribe((res) => {
-          switch (res) {
-            case 0: {
-              this._personService
-                .createOrEdit(this.user.name , this.user.emailAddress , this.user.full).subscribe(() => {
-                  this.showCreateMessage();
-                  this.bsModalRef.hide();
-                  this.onSave.emit();
-                });
-              break;
-            }
-            case 1: {
-              this.showSwalAlertMessage('Tên đăng nhập đã tồn tại!', 'error');
-              this.saving = false;
-              break;
-            }
-            case 2: {
-              this.showSwalAlertMessage('Email đã tồn tại!', 'error');
-              this.saving = false;
-              break;
-            }
-            default:
-              break;
-          }
+        this._personService.createOrEdit(this.user).subscribe(() => {
+          this.showCreateMessage();
+          this.bsModalRef.hide();
+          this.onSave.emit(this.form);
         });
       }
     }
+    console.log(this.form);
   }
+
 
   private _getValueForSave() {
     this.user.name = this.form.controls.HoTen.value;
-    this.user.surname = this.form.controls.HoTen.value;
-    this.user.emailAddress = this.form.controls.EmailAdress.value;
-    this.user.userName = this.form.controls.TenDangNhap.value;
+    this.user.fullName = this.form.controls.HoTen.value;
+    this.user.email = this.form.controls.EmailAddress.value;
   }
-}
+  private _setValueForEdit() {
+    this.form.controls.TextBox1.setValue(this.user.email);
+    this.form.controls.TextBox2.setValue(this.user.fullName);
+    this.form.controls.TextBox2.setValue(this.user.name);
+  }
 
+}

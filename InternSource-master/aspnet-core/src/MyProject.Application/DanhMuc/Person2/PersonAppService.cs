@@ -138,7 +138,9 @@ namespace MyProject.DanhMuc.Person2
 
                 throw e;
             }
-            
+
+           
+
         }
 
         public async Task Delete(EntityDto input)

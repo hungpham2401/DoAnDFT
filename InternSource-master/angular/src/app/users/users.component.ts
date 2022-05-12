@@ -62,8 +62,8 @@ export class UsersComponent extends AppComponentBase implements OnInit {
     this.showCreateOrEditUserDialog();
   }
 
-  editUser(user: UserDto): void {
-    this.showCreateOrEditUserDialog(user.id);
+  editUser(test: UserDto): void {
+    this.showCreateOrEditUserDialog(test.id);
   }
 
   viewUser(user: UserDto): void {

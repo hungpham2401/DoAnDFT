@@ -4,14 +4,7 @@
         <p-tabView>
             <p-tabPanel header="Thông tin cần điền vào ">
                 <div class="row ui-fluid">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <dft-label-validation [control]="form.get('HoTen')" [title]="'Họ tên *'">
-                            </dft-label-validation>
-                            <input formControlName="HoTen" type="text" class="form-control" name="HoTen" id="HoTen" maxlength="64" />
-                            <dft-validation [control]="form.get('HoTen')"></dft-validation>
-                        </div>
-                    </div>
+
                     <div class="col-md-4">
                         <div class="form-group">
                             <dft-label-validation [control]="form.get('Name')" [title]="'Name *'">
@@ -22,9 +15,17 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
+                            <dft-label-validation [control]="form.get('HoTen')" [title]="'Họ tên *'">
+                            </dft-label-validation>
+                            <input formControlName="HoTen" type="text" class="form-control" name="HoTen" id="HoTen" maxlength="64" />
+                            <dft-validation [control]="form.get('HoTen')"></dft-validation>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
                             <dft-label-validation [control]="form.get('EmailAddress')" [title]="'Địa chỉ Email *'">
                             </dft-label-validation>
-                            <input formControlName="EmailAddress" class="form-control" maxlength="256" name="abc" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,})+$" />
+                            <input formControlName="EmailAddress" class="form-control" maxlength="256" name="EmailAddress" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,})+$" />
                             <dft-validation [control]="form.get('EmailAddress')"></dft-validation>
                         </div>
                     </div>

@@ -50,10 +50,10 @@
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                    <a class="dropdown-item" (click)="viewDemo(record.person.id)">Xem</a>
-                                                    <a class="dropdown-item" (click)="createDemo(record.person.id)">Cập
+                                                    <a class="dropdown-item" (click)="viewUser(record.person,true)">Xem</a>
+                                                    <a class="dropdown-item" (click)="editUser(record.person)">Cập
                                                         nhật</a>
-                                                    <a class="dropdown-item" (click)="_deleteDemo(record.person)">Xóa</a>
+                                                    <a class="dropdown-item" (click)="delete(record.person)">Xóa</a>
                                                 </div>
                                             </div>
                                         </td>
